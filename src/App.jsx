@@ -151,6 +151,39 @@ const App = () => {
           {trademark.verbalElements && trademark.verbalElements.join(',')}
         </p>
 
+        {trademark?.owners?.map((owners, j) => (
+            <div key={j}>
+              {owners?.name && (<>
+                   <strong>Owner's Name:</strong>
+               <h1>{owners.name}</h1></>
+              )}
+            </div>
+          ))}
+
+
+          
+        {trademark?.representatives?.map((representatives, j) => (
+            <div key={j}>
+              {representatives?.name && (<>
+                   <strong>Owner's Name:</strong>
+               <h1>{representatives.name}</h1></>
+              )}
+
+        {representatives?.address && (<>
+                   <strong>Owner's Address:</strong>
+               <h1>{representatives.address}</h1></>
+              )}
+
+
+        {representatives?.country && (<>
+                   <strong>Owner's Country:</strong>
+               <h1>{representatives.country}</h1></>
+              )}
+            </div>
+          ))}
+
+        
+
         <div className=' flex'>
           <Button
             className='bg-gray-400'
@@ -167,6 +200,11 @@ const App = () => {
               )}
             </div>
           ))}
+
+
+
+
+
         </div>
         {i < section.trademarks.length - 1 && <hr />}
       </div>
@@ -174,14 +212,14 @@ const App = () => {
     ))}
   </div>
 ))}
-
+                                                                       
           {/* Display additional content based on the uploaded data */}
-          {/* <h3>Data from Uploaded JSON:</h3>
-          <pre>{JSON.stringify(data, null, 2)}</pre> */}
-        </div>
-      )}
-    </div>
-  );
-};
-
+                                  {/* <h3>Data from Uploaded JSON:</h3>
+                         <pre>{JSON.stringify(data, null, 2)}</pre> */}
+                                                                 </div>
+                                                                     )}
+                                                                 </div>
+                                                                     );
+                                                                     };
+                                                                        
 export default App;
